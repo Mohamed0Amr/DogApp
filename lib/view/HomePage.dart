@@ -9,7 +9,9 @@ import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
+
   // change 1
+  // change 2
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,15 +58,31 @@ class HomePage extends StatelessWidget {
                     children: [
                       MyButton(
                         label: "Get Started",
-                        onTap: () => GetStarted(),
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => GetStarted()),
+                          );
+                        },
                         colorbk: yellowClr,
                         colorfg: black,
+                        width: 240,
+                        height: 60,
                       ),
                       MyButton(
                         label: "Login",
-                        onTap: () => Login(),
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Login()),
+                          );
+                        },
                         colorbk: Colors.transparent,
                         colorfg: Colors.white,
+                        width: 240,
+                        height: 60,
                       )
                     ],
                   )

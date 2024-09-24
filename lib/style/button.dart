@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 
 class MyButton extends StatelessWidget {
@@ -5,7 +7,9 @@ class MyButton extends StatelessWidget {
   final Function()? onTap;
   final Color colorbk;
   final Color colorfg;
-  const MyButton({Key? key,required this.label ,required this.onTap, required this.colorbk, required this.colorfg}) : super(key: key);
+  final double width;
+  final double height;
+  const MyButton({Key? key,required this.label ,required this.onTap, required this.colorbk, required this.colorfg, required this.width, required this.height}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,8 +17,8 @@ class MyButton extends StatelessWidget {
       onTap:onTap,
       child: Container(
         alignment: Alignment.center,
-        width: 240,
-        height: 60,
+        width: width,
+        height: height,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(30),
             color: colorbk
